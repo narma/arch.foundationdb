@@ -26,6 +26,11 @@ build() {
   sed -e 's|!/usr/bin/env python|!/usr/bin/env python2|' -i "$srcdir"/usr/lib/foundationdb/backup_agent/taskbucket/test.py
   sed -e 's|!/usr/bin/env python|!/usr/bin/env python2|' -i "$srcdir"/usr/lib/foundationdb/make_public.py
   sed -e 's|group = foundationdb|group = daemon|' -i "$srcdir"/etc/foundationdb/foundationdb.conf
+  
+  # remove python2.6 binding if exist
+  if [ -d "$srcdir"/usr/lib64/python2.6 ]; then
+    rm -rf "$srcdir"/usr/lib64/python2.6
+  fi
 }
 
 package() {
