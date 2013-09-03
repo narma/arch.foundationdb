@@ -1,20 +1,22 @@
 # Contributor: Sergey Rublev <narma.nsk@gmail.com>
 
 pkgname=foundationdb
-pkgver="0.3.0"
+pkgver="1.0.0"
 pkgrel=1
 pkgdesc="Distributed key/value store with ACID transactions"
-url="http://www.foundationdb.com/"
+url="https://foundationdb.com/downloads/I_accept_the_FoundationDB_Community_License_Agreement"
 license=('Custom foundationdb eula license')
 makedepends=('rpmextract')
 #depends=()
 #optdepends=()
 arch=('x86_64')
-source=(foundationdb-clients-${pkgver}-${pkgrel}.x86_64.rpm foundationdb-server-${pkgver}-${pkgrel}.x86_64.rpm foundationdb.service)
+source=(${url}/foundationdb-clients-${pkgver}-${pkgrel}.x86_64.rpm
+        ${url}/foundationdb-server-${pkgver}-${pkgrel}.x86_64.rpm
+        foundationdb.service)
 backup=('etc/foundationdb/foundationdb.conf')
 install=foundationdb.install
-md5sums=('a4aefc0f9a9a86acdea7889e5f25cf28'
-         'abf81aefa330a49efd3b17cb067fc366'
+md5sums=('7e573a21d53408e12cc236aded112812'
+         '1117bdca0e2b5766bf17b5440bdd00f5'
          'e7d685cf975b2035fddd4e98c83a1508')
 
 build() {
