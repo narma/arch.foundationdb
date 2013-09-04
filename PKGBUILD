@@ -22,11 +22,11 @@ md5sums=('7e573a21d53408e12cc236aded112812'
 build() {
   rpmextract.sh *.rpm
 
-  sed -e 's|!/usr/bin/env python|!/usr/bin/env python2|' -i "$srcdir"/usr/lib/$pkgname/backup_agent/fdbbackup
-  sed -e 's|!/usr/bin/env python|!/usr/bin/env python2|' -i "$srcdir"/usr/lib/$pkgname/backup_agent/backup_agent
-  sed -e 's|!/usr/bin/env python|!/usr/bin/env python2|' -i "$srcdir"/usr/lib/$pkgname/backup_agent/fdbrestore
-  sed -e 's|!/usr/bin/env python|!/usr/bin/env python2|' -i "$srcdir"/usr/lib/foundationdb/backup_agent/taskbucket/test.py
-  sed -e 's|!/usr/bin/env python|!/usr/bin/env python2|' -i "$srcdir"/usr/lib/foundationdb/make_public.py
+  sed -e 's|!/usr/bin/python|!/usr/bin/env python2|' -i "$srcdir"/usr/lib/$pkgname/backup_agent/fdbbackup
+  sed -e 's|!/usr/bin/python|!/usr/bin/env python2|' -i "$srcdir"/usr/lib/$pkgname/backup_agent/backup_agent
+  sed -e 's|!/usr/bin/python|!/usr/bin/env python2|' -i "$srcdir"/usr/lib/$pkgname/backup_agent/fdbrestore
+  sed -e 's|!/usr/bin/python|!/usr/bin/env python2|' -i "$srcdir"/usr/lib/foundationdb/backup_agent/taskbucket/test.py
+  sed -e 's|!/usr/bin/python|!/usr/bin/env python2|' -i "$srcdir"/usr/lib/foundationdb/make_public.py
   sed -e 's|group = foundationdb|group = daemon|' -i "$srcdir"/etc/foundationdb/foundationdb.conf
   
   # remove python2.6 binding if exist
