@@ -19,8 +19,8 @@ post_install() {
 }
 
 post_upgrade() {
-  chown -R foundationdb:daemon /var/lib/mongodb
-  chown -R foundationdb:daemon /var/log/mongodb
+  chown -R foundationdb:daemon /var/lib/foundationdb
+  chown -R foundationdb:daemon /var/lib/foundationdb
 }
 
 pre_remove() {
